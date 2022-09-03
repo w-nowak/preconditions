@@ -48,7 +48,8 @@ public class Preconditions {
      *
      * @param iterable     the actual iterable which is checked.
      * @param argumentName the argument's name (used to form the exception message).
-     * @param <T>          a concrete type of the iterable.
+     * @param <I>          an iterable collection type.
+     * @param <T>          a concrete element type of the iterable.
      *
      * @return the passed iterable if it's not empty.
      *
