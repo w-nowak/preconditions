@@ -4,8 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>Preconditions </name>
-    <description>Small library providing custom precondition checks which helps to ensure invariants.</description>
+    <name>Preconditions</name>
+    <description>A small library providing custom precondition checks which help to ensure invariants</description>
+    <url>https://github.com/w-nowak/preconditions</url>
     <licenses>
         <license>
             <name>The Apache License, Version 2.0</name>
@@ -23,20 +24,16 @@
         <developerConnection>scm:git:ssh://github.com:w-nowak/preconditions.git</developerConnection>
         <url>https://github.com/w-nowak/preconditions</url>
     </scm>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <groupId>io.github.w-nowak.tools</groupId>
     <artifactId>preconditions</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>io.github.w-nowak.tools</groupId>
+        <artifactId>maven-central-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
 
     <properties>
         <junit.version>5.9.0</junit.version>
@@ -56,68 +53,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.2.1</version>
-                <executions>
-                    <execution>
-                        <id>generate-sources</id>
-                        <phase>package</phase>
-                        <goals><goal>jar-no-fork</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.4.1</version>
-                <executions>
-                    <execution>
-                        <id>generate-javadoc</id>
-                        <phase>package</phase>
-                        <goals><goal>jar</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>net.nicoulaj.maven.plugins</groupId>
-                <artifactId>checksum-maven-plugin</artifactId>
-                <version>1.10</version>
-                <executions>
-                    <execution>
-                        <id>generate-checksums</id>
-                        <phase>verify</phase>
-                        <goals><goal>artifacts</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>3.0.1</version>
-                <executions>
-                    <execution>
-                        <id>generate-gpg-signatures</id>
-                        <phase>verify</phase>
-                        <goals><goal>sign</goal></goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <keyname>io.github.w-nowak</keyname>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.13</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
-                </configuration>
             </plugin>
         </plugins>
     </build>
