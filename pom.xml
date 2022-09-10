@@ -25,9 +25,8 @@
         <url>https://github.com/w-nowak/preconditions</url>
     </scm>
 
-    <groupId>io.github.w-nowak.tools</groupId>
     <artifactId>preconditions</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <parent>
         <groupId>io.github.w-nowak.tools</groupId>
